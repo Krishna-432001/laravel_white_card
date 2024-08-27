@@ -18,6 +18,17 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+
+            $table->string('id_no');
+
+            $table->date('valid_upto_date');
+
+            $table->text('address');
+
+            $table->date('dob');
+
+            $table->unsignedBigInteger('department_id');
+
             $table->timestamps();
         });
 
