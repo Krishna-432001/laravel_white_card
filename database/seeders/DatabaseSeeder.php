@@ -8,6 +8,8 @@ use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\Department;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -19,8 +21,22 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'admin',
-            'email' => 'admin@example.com',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
         ]);
+
+        $department=[
+            ['name' => 'RTO'],
+            ['name' => 'PAN_CARD'],
+            ['name' => 'VOTER_ID'],
+            ['name' => 'RATION_CARD']
+            
+        ];
+
+        foreach ($department as $row)
+        {
+            Department::create($row);
+        }
+    
     }
 }
