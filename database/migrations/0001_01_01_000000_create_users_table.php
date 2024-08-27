@@ -19,15 +19,15 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
 
-            $table->string('id_no');
+            $table->string('no')->nullable();
 
-            $table->date('valid_upto_date');
+            $table->date('valid_upto_date')->nullable();
 
-            $table->text('address');
+            $table->text('address')->nullable();
 
-            $table->date('dob');
+            $table->date('dob')->nullable();
 
-            $table->unsignedBigInteger('department_id');
+            $table->unsignedBigInteger('department_id')->nullable();
 
             $table->timestamps();
         });
