@@ -37,6 +37,18 @@ class DatabaseSeeder extends Seeder
         {
             Department::create($row);
         }
+
+        $roles=[
+            ['name' => 'RTO'],
+            ['name' => 'PAN_CARD'],
+            ['name' => 'VOTER_ID'],
+            ['name' => 'RATION_CARD']
+        ];
+
+        foreach ($department as $row)
+        {
+            Department::create($row);
+        }
     
     }
 }
