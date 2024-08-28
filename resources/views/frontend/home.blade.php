@@ -65,10 +65,17 @@ home page
 </form>
 
 @else
+<button class="btn btn-primary" onclick="location.href='#'">Create Officer</button>
 
-<a href="#">Create Officer</a>
+<button class="btn btn-primary"onclick="location.href='#'">View Officer</button>
 
-<a href="#">Create Officer</a>
+<button class="btn btn-primary"onclick="location.href='#'">Create White Card</button>
+
+<button class="btn btn-primary"onclick="location.href='#'">View White Card</button>
+
+<button class="btn btn-primary"onclick="location.href='#'">View Card Info</button>
+
+<button class="btn btn-primary"onclick="location.href='#'">Card Status</button>
 
 @endguest
 
