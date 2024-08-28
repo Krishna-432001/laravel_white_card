@@ -7,6 +7,24 @@
 @section('content')
 <div class="container mt-4">
     <h2>Create Officer</h2>
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <!-- registered successfully -->
+        <!-- Check if a success message exists in the session and display it -->
+        @if (Session::has('success_message'))
+            <div class="alert alert-success">
+                {{ Session::get('success_message') }}
+            </div>
+        @endif
+
     <form action="{{ route('officers.store') }}" method="POST">
         @csrf
         <div class="form-group mb-3">
@@ -22,6 +40,12 @@
         <div class="form-group mb-3">
             <label for="password">Password:</label>
             <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <div class="error" id="confirmPasswordError"></div>
         </div>
 
         <div class="form-group mb-3">
