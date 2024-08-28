@@ -7,6 +7,7 @@
 @section('content')
 <div class="container mt-4">
     <h2>Officer Listing</h2>
+    
 
     <!-- Department Filter -->
     <form method="GET" action="{{ route('officers.index') }}" class="mb-4">
@@ -14,11 +15,8 @@
             <label for="department">Filter by Department:</label>
             <select class="form-control" id="department" name="department" onchange="this.form.submit()">
                 <option value="" selected>All Departments</option>
-                @foreach($departments as $department)
-                    <option value="{{ $department }}" 
-                        @if(request('department') == $department) selected @endif>
-                        {{ $department }}
-                    </option>
+                @foreach($departments as $row)
+                <option value="{{ $row->name }}">{{$row->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -36,13 +34,13 @@
             </tr>
         </thead>
         <tbody>
-            @forelse($officers as $officer)
+            @forelse($officers as $row)
                 <tr>
-                    <td>{{ $officer->name }}</td>
-                    <td>{{ $officer->email }}</td>
-                    <td>{{ $officer->mobile_number }}</td>
-                    <td>{{ $officer->designation }}</td>
-                    <td>{{ $officer->department }}</td>
+                    <td>{{ $row->name }}</td>
+                    <td>{{ $row->email }}</td>
+                    <td>{{ $row->mobile_number }}</td>
+                    <td>{{ $row->designation }}</td>
+                    <td>{{ $row->department }}</td>
                 </tr>
             @empty
                 <tr>
