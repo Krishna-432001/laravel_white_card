@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Models\Department;
 
+use Spatie\Permission\Models\Role;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -45,9 +47,9 @@ class DatabaseSeeder extends Seeder
             ['name' => 'RATION_CARD']
         ];
 
-        foreach ($department as $row)
+        foreach ($roles as $row)
         {
-            Department::create($row);
+            Role::create($row);
         }
     
     }
