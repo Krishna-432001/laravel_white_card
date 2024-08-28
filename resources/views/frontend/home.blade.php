@@ -33,11 +33,15 @@ home page
 
 </form>
 
-<form action="#" method="post" name="admin_login_form">
+<form action="{{ route('admin.login') }}" method="post" name="admin_login_form">
+
+@csrf
 
 <input type="email" name="email">
 
 <input type="password" name="password">
+
+<input type="submit" value="admin login">
 
 </form>
 
