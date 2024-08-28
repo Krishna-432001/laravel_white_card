@@ -65,17 +65,17 @@ home page
 </form>
 
 @else
-<button class="btn btn-primary" onclick="location.href='#'">Create Officer</button>
+<a class="btn btn-primary" href="{{ route('officer.create') }}">Create Officer</a>
 
-<button class="btn btn-primary"onclick="location.href='#'">View Officer</button>
+<a class="btn btn-primary" href="{{ route('officer.view') }}">View Officer</a>
 
-<button class="btn btn-primary"onclick="location.href='#'">Create White Card</button>
+<a class="btn btn-primary" href="{{ route('white_card.create') }}">Create White Card</a>
 
-<button class="btn btn-primary"onclick="location.href='#'">View White Card</button>
+<a class="btn btn-primary" href="{{ route('white_card.view') }}">View White Card</a>
 
-<button class="btn btn-primary"onclick="location.href='#'">View Card Info</button>
+<a class="btn btn-primary" href="{{ route('white_card.info') }}">View Card Info</a>
 
-<button class="btn btn-primary"onclick="location.href='#'">Card Status</button>
+<a class="btn btn-primary" href="{{ route('white_card.status') }}">Card Status</a>
 
 @endguest
 
