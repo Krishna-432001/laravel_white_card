@@ -14,11 +14,8 @@
             <label for="department">Select Department:</label>
             <select class="form-control" id="department" name="department" onchange="this.form.submit()">
                 <option value="" selected>Select Department</option>
-                @foreach($departments as $department)
-                    <option value="{{ $department }}" 
-                        @if(request('department') == $department) selected @endif>
-                        {{ $department }}
-                    </option>
+                @foreach($departments as $row)
+                <option value="{{ $row->name }}">{{$row->name}}</option>
                 @endforeach
             </select>
         </div>
